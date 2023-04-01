@@ -8,6 +8,8 @@ Color myGray = const Color.fromRGBO(133, 135, 156, 1);
 Color bgColorInput = const Color.fromRGBO(36, 48, 78, 1);
 Color bgColorScafold = const Color.fromRGBO(19, 21, 38, 1);
 Color myBlack = const Color.fromRGBO(12, 13, 24, 1);
+Color myBordeBox = const Color.fromRGBO(46, 48, 66, 1);
+Color myColorTextSecudary = const Color.fromRGBO(110, 110, 126, 1);
 
 // Styler input
 ThemeData inputBordeColors = ThemeData(
@@ -39,8 +41,14 @@ TextStyle outputStyle = TextStyle(
   fontSize: 11,
 );
 // Sizer icons meni
-double size = 40; 
+double size = 40;
 
+// Styler text secundary  label
+TextStyle textSecudary = TextStyle(
+  color: myColorTextSecudary,
+  fontSize: 15,
+  fontWeight: FontWeight.w600,
+);
 
 // Input container decoration
 //BoxDecoration bgTextInpuFormField BoxDecoration();

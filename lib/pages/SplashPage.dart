@@ -10,7 +10,7 @@ class SplashPage extends StatelessWidget {
     return EasySplashScreen(
       logo: Image.asset('assets/logo.png'),
       backgroundColor: bgColorScafold,
-      durationInSeconds: 3,
+      durationInSeconds: 2,
       showLoader: true,
       loaderColor: myGreen,
       navigator: HomePage(),

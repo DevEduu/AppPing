@@ -7,40 +7,73 @@ import 'package:apping/widgets/OutputCmd.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+final GeradorController controller = Get.put(GeradorController());
+
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-
-  final GeradorController controller = Get.put(GeradorController());
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: bgColorScafold,
-        body: Column(children: [
-          const SizedBox(
-            height: 50,
-          ),
-          CustonInputFormField(
-            controller: controller,
-          ),
-          OutputCmd(
-            controller: controller,
-          ),
-          CustonButton(
-            onPressed: () {
-              controller.outputPing();
-              controller.clearlistView();
-              controller.dropColorBorder();
-            },
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          const Menu()
-        ]),
+      child: Obx(
+        () => Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+              backgroundColor: bgColorInput,
+              selectedItemColor: myGreen,
+              onTap: controller.onTabTapped,
+              currentIndex: controller.indiceAtual.value,
+              // ignore: prefer_const_literals_to_create_immutables
+              items: [
+                const BottomNavigationBarItem(
+                  icon: Icon(
+                    LucideIcons.history,
+                  ),
+                  label: 'history',
+                ),
+                const BottomNavigationBarItem(
+                  icon: Icon(LucideIcons.zap),
+                  label: 'Ping',
+                ),
+                const BottomNavigationBarItem(
+                  icon: Icon(LucideIcons.settings),
+                  label: 'Settings',
+                ),
+              ]),
+          backgroundColor: bgColorScafold,
+          body: controller.pages[controller.indiceAtual.value],
+        ),
       ),
     );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      const SizedBox(
+        height: 50,
+      ),
+      CustonInputFormField(
+        controller: controller,
+      ),
+      OutputCmd(
+        controller: controller,
+      ),
+      CustonButton(
+        onPressed: () {
+          controller.outputPing();
+          controller.clearlistView();
+          controller.dropColorBorder();
+        },
+      ),
+      const SizedBox(
+        height: 24,
+      ),
+      // const Menu()
+    ]);
   }
 }
 
