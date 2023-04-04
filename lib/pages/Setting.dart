@@ -40,7 +40,7 @@ class Setting extends StatelessWidget {
           children: [
             Column(
               children: [
-                Container(
+                SizedBox(
                   width: 320,
                   child: Text(
                     'Ping preference',
@@ -53,8 +53,8 @@ class Setting extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 12),
-                  padding: EdgeInsets.all(20),
+                  margin: const EdgeInsets.symmetric(vertical: 12),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: myBordeBox, width: 2),
