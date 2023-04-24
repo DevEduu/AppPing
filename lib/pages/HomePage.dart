@@ -6,6 +6,7 @@ import 'package:apping/widgets/CustonFormField.dart';
 import 'package:apping/widgets/OutputCmd.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final GeradorController controller = Get.put(GeradorController());
 
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
                   icon: Icon(
                     LucideIcons.history,
                   ),
-                  label: 'history',
+                  label: AppLocalizations.of(context)!.labelHistory,
                 ),
                 const BottomNavigationBarItem(
                   icon: Icon(LucideIcons.zap),

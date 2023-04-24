@@ -1,6 +1,9 @@
+<img src="./assets/banner.png" align="center" width="850">
+
+
 # AppPing 🚀
 
-O AppPing é um aplicativo de teste de ping que permite que você verifique a latência de uma conexão com um servidor ou site específico. É uma ferramenta útil para avaliar a qualidade da conexão com a Internet ou diagnosticar problemas de rede.
+É uma ferramenta útil para avaliar a qualidade da conexão com a Internet ou diagnosticar problemas de rede.
 
 ## Como usar 👽
 
